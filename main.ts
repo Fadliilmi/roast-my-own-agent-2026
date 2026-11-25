@@ -6,7 +6,8 @@ const ENTRY =
 
 // The gate only accepts a single line of 1-200 characters, so fail loudly
 // here instead of writing an entry the scorer would reject.
-if (ENTRY.length < 1 || ENTRY.length > 200 || ENTRY.includes("\n")) {
+const MAX_CHARS = 200;
+if (ENTRY.length < 1 || ENTRY.length > MAX_CHARS || ENTRY.includes("\n")) {
   throw new Error(`entry must be one line of 1-200 characters, got ${ENTRY.length}`);
 }
 
